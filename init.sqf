@@ -13,7 +13,7 @@ _null = [] spawn {
       _cam camSetPos _camPos; 
       _cam camSetDir (_camPos vectorFromTo _camTarget);
       _cam camCommit 0;
-      sleep 0.5;
+      sleep 0.2;
       _y = _y + _gridSize;
     };
     _x = _x + _gridSize;
