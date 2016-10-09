@@ -21,6 +21,6 @@ _null = [] spawn {
 
   _cam cameraEffect ["Terminate", "Top"];
   camDestroy _cam;
-};
 
-endMission "END1";
+  endMission "END1";
+};
