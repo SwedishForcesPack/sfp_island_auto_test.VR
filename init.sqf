@@ -1,9 +1,16 @@
-_null = [] spawn {
+waitUntil {time > 0};
+
+showCinemaBorder false;
+
+_cam = "camera" camCreate (position player); 
+_cam cameraEffect ["Internal", "Back"];
+
+_null = [_cam] spawn {
+  params ["_cam"];
+
   _gridSize = 500;
   _cameraHeight = 100;
 
-  _cam = "camera" camCreate (position player); 
-  _cam cameraEffect ["Internal", "Top"];
   _x = 0;
   while {_x < worldSize} do {
     _y = 0;
@@ -13,13 +20,13 @@ _null = [] spawn {
       _cam camSetPos _camPos; 
       _cam camSetDir (_camPos vectorFromTo _camTarget);
       _cam camCommit 0;
-      sleep 0.2;
+      sleep 1;
       _y = _y + _gridSize;
     };
     _x = _x + _gridSize;
   };
 
-  _cam cameraEffect ["Terminate", "Top"];
+  _cam cameraEffect ["Terminate", "Back"];
   camDestroy _cam;
 
   endMission "END1";
