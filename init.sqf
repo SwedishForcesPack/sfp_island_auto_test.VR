@@ -8,7 +8,7 @@ _cam cameraEffect ["Internal", "Back"];
 _null = [_cam] spawn {
   params ["_cam"];
 
-  _gridSize = 500;
+  _gridSize = 1000;
   _cameraHeight = 100;
 
   _x = 0;
